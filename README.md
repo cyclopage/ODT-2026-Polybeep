@@ -136,7 +136,9 @@ List what inspired the project.
 What makes your project original?
 
 **Response:**  
-`[Write here]`
+`The project’s originality lies in how it transforms a simple, well-known game into a system with multiple experiential layers. The introduction of distinct AI characters disrupts the inherent monotony of the base game, not by changing its identity but by altering how it behaves. Each character creates a different strategic environment, effectively opening up new “paths” within the same rule structure. These variations are not immediately obvious but emerge through play, allowing the experience to unfold progressively and maintain novelty over time.
+
+Additionally, the project integrates the physicality of a traditional hand game with the feedback language of digital games. The interaction remains grounded in direct, tactile input, but the response through LEDs, timing, and sound which adds a layer of visual and sensory gratification typically associated with video games. This combination creates a hybrid experience where familiar physical play is enhanced by expressive, system-driven feedback, making the interaction feel both intuitive and distinctly new.`
 
 ---
 
@@ -152,18 +154,34 @@ Examples:
 - move object → sensor detects → sound/light response → player reacts
 
 **Response:**  
-`[Write here]`
+`Recognize
+The player identifies the game as a version of Chopsticks through its structure and interface, creating immediate familiarity and reducing hesitation to engage.
+
+Understand
+The player quickly grasps how to interact and what is expected, either through direct explanation or intuitive cues embedded in the system.
+
+Engage
+The player begins active play in the initial mode, entering a responsive back-and-forth with the machine.
+
+Accumulate
+Interest and involvement build over time through feedback, challenge, and repeated decision-making, increasing the player’s investment in the outcome.
+
+Explore
+The player seeks variation by trying different AI characters or modes, discovering new patterns, difficulties, and strategies.
+
+Exit
+The player disengages after reaching a point of satisfaction, fatigue, or curiosity fulfilled, with the experience leaving enough impact to encourage future return.`
 
 ## 4.2 Intended Player / Audience
 
 | Question | Response |
 |---|---|
-| Who is this for? | `[Write here]` |
-| Age range | `[Write here]` |
-| Solo or multiplayer | `[Write here]` |
-| Expected duration of one round | `[Write here]` |
-| What should the player feel? | `[Write here]` |
-| Is explanation required before use? | `[Write here]` |
+| Who is this for? | `People interesting in playing short games` |
+| Age range | `12+` |
+| Solo or multiplayer | `Solo` |
+| Expected duration of one round | `5 minutes (depending on character picked)` |
+| What should the player feel? | `Challenge with a faint path to success` |
+| Is explanation required before use? | `For people who dont know Chopsticks, yes` |
 
 ## 4.3 Player Journey
 Describe exactly how a player will use the project.
