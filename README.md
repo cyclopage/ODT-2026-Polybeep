@@ -52,20 +52,21 @@ By the final review, this README should clearly show:
 # 1. Team Identity
 
 ## 1.1 Studio / Group Name
-`[Enter your group name]`
+`[Polybeep]`
 
 ## 1.2 Team Members
+Advaith Manojkumar, Nishad Bhagwat
 
 | Name | Primary Role | Secondary Role | Strengths Brought to the Project |
 |---|---|---|---|
-| `[Student 1]` | `[Electronics / Coding / App / Fabrication / Mechanics]` | `[Role]` | `[Write here]` |
-| `[Student 2]` | `[Electronics / Coding / App / Fabrication / Mechanics]` | `[Role]` | `[Write here]` |
+| `Advaith Manojkumar` | `Coding` | `Mechanics` | `Programming knowledge and game design` |
+| `Nishad Bhagwat` | `Electronics` | `App` | `Mechanics, Logic mapping, Fabrication (materals)` |
 
 ## 1.3 Project Title
-`[Enter the title of your project]`
+`Chopped Sticks`
 
 ## 1.4 One-Line Pitch
-`[Describe your project in one sentence]`
+`A board version of Chopsticks with programmed players to play against`
 
 ## 1.5 Expanded Project Idea
 In 1–2 paragraphs, explain:
@@ -75,7 +76,8 @@ In 1–2 paragraphs, explain:
 - what technologies are involved.
 
 **Response:**  
-`[Write here]`
+`Chopsticks Arcade is a two player hand game brought to life as a physical arcade device, where you face off against a programmed AI opponent across a glowing panel of buttons and LED arrays. The rules are deceptively simple: tap your fingers onto your opponent's hand to accumulate value (adding the two values), and eliminate both their hands before they eliminate yours. But the real game is in choosing your opponent. Four AI characters, each with a distinct mechanical twist, sit on the other side of the box. The Druid plays a clean, forgiving version of the game — a gentle introduction that still has enough wit to punish sloppy play. The Brute fights dirty with an extra life on one hand and hard-mode AI instincts, forcing you to work twice as hard for the win. The Tank changes the physics entirely -  it takes six points, not five, to destroy a hand, stretching every match into a slow war of attrition that rewards patience over aggression. The Oracle offers no mercy and no gimmicks: a pre-solved, binary tree programmed AI that has classified every reachable game state as a win, loss, or draw, and is virtually unbeatable.
+What makes this strange and satisfying is the collision of something relatable- a children's hand game played worldwide  with something obsessively engineered: minimax trees, win path graphs and a pre-computed table of 207 board positions baked into Oracle's code. The design of the opponent characters is to provide a high skill ceiling (Brute and oracle), an easy entry (druid) and an interesting twist (Tank). The physical object does most of the talking. LEDs count your fingers. The click of buttons, flashing of lights and a buzzer marks every turn. Wins and losses are announced in light and sound rather than text. The companion app on your phone, built in MIT App Inventor, is used to select opponents.`
 
 ---
 
@@ -101,7 +103,12 @@ Answer the following:
 - Why would someone want to try it again?
 
 **Response:**  
-`[Write here]`
+The experience is defined by a tight, responsive interaction loop between the player and the machine, where every input produces immediate, precise, and slightly quirky feedback that doubles as gratification. The system is designed to feel intuitive from the outset, relying on pre-existing associations—such as familiarity with the core game, and the use of buttons and LEDs as clear signifiers—so that players can begin engaging without needing explicit instruction. 
+
+The player should feel a growing sense of puzzle-solving urgency, as if the system in front of them has an underlying logic that can be cracked. There should be a consistent layer of suspense tied to the machine’s next move, creating anticipation and attention at every step. Alongside this, the experience should provoke a competitive instinct—a persistent drive to defeat the bot—not just by chance, but by understanding and outthinking it. This combination of curiosity, tension, and challenge keeps the player mentally engaged throughout.
+
+Replay is driven by a cycle of ego, failure, and gratification. Losses are not random but interpretable, which pushes the player to try again with a revised approach. The machine’s feedback reinforces both success and failure in a way that makes outcomes feel earned, encouraging persistence. As interaction progresses, the different characters add progression and increase the skill ceiling, pushing people to best the game.
+`
 
 ## 2.3 Design Persona
 Complete the sentence below:
@@ -109,7 +116,7 @@ Complete the sentence below:
 > We are designing this project as if we are a small creative studio making a **[toy / game / playable object / interactive experience]** for **[children / teens / adults / classmates / exhibition visitors / mixed audience]**.
 
 **Response:**  
-`[Write here]`
+`> We are designing this project as if we are a small creative studio making a **game** for **mixed audiences**.`
 
 ---
 
@@ -120,9 +127,10 @@ List what inspired the project.
 
 | Source Type | Title / Link | What Inspired You |
 |---|---|---|
-| `[Toy / Board game / App / Video / Website / Object]` | `[Link or title]` | `[What did you learn or borrow?]` |
-| `[Toy / Board game / App / Video / Website / Object]` | `[Link or title]` | `[What did you learn or borrow?]` |
-| `[Toy / Board game / App / Video / Website / Object]` | `[Link or title]` | `[What did you learn or borrow?]` |
+| `Hand game` | `Chopsticks` | `Game mechanics and replayability` |
+| `Video Game` | `Nuclear Throne` | `[Characters as a mechanism for progression` |
+| `Board Game` | `Battleship` | `Keeping tension between players` |
+| `Website/game` | `Chess.com` | `Intrigue of an unbeatable AI` |
 
 ## 3.2 Original Twist
 What makes your project original?
