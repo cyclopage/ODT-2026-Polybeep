@@ -197,7 +197,10 @@ Describe exactly how a player will use the project.
 ## 4.4 Rules of Play
 If your project is a game, list the rules clearly.
 
-- `[Rule 1]`
+- `Starting State
+
+Each player begins with 1 finger on each hand.
+The system randomly determines who takes the first turn.`
 - `[Rule 2]`
 - `[Rule 3]`
 - `[Rule 4]`
@@ -301,8 +304,8 @@ Add a sketch with labels showing:
 | Dimension | Value |
 |---|---|
 | Length | `[Write here]` |
-| Width | `[Write here]` |
-| Height | `[Write here]` |
+| Width | `21 cm` |
+| Height | `5.2 cm` |
 | Estimated weight | `[Write here]` |
 
 ---
@@ -317,7 +320,7 @@ Check all that apply.
 - [ ] Belt drives
 - [ ] Linkages
 - [ ] Hinges
-- [ ] Shafts
+- [/] Shafts
 - [ ] Springs
 - [ ] Bearings
 - [ ] Wheels
@@ -347,14 +350,13 @@ If your project includes mechanical motion, document the digital planning before
 
 | Tool Used | File / Link | What Was Tested |
 |---|---|---|
-| `[Fusion 360 / Tinkercad / other]` | `[Link or screenshot]` | `[What did you validate?]` |
-| `[Tool]` | `[Link or screenshot]` | `[What did you validate?]` |
+| `[BLender]` | `[Link or screenshot]` | `[If rotation shaft made the character transition visible]` |
 
 ## 8.5 Changes After Digital Testing
 What changed after the CAD, animation, or simulation stage?
 
 **Response:**  
-`[Write here]`
+`[There was no change in the shaft mechanism as there was a very less chance of error considering the simplicity of the mechanism]`
 
 ---
 
@@ -365,8 +367,12 @@ What changed after the CAD, animation, or simulation stage?
 | Component | Quantity | Purpose |
 |---|---:|---|
 | `[ESP32]` | `1` | `[Main controller]` |
-| `[Component]` | `[Qty]` | `[Purpose]` |
-| `[Component]` | `[Qty]` | `[Purpose]` |
+| `[RGB strips WS2812B]` | `[5*4]` | `[Visual points indicators]` |
+| `[External power supply module]` | `[1]` | `[5V supply to ESP32 and components]` |
+| `[Push Button]` | `[4]` | `[Game engagement - point transfer and selection]` |
+| `[Servo - microservo SG90]` | `1` | `[Rotating Shaft - Character display]` |
+| `[Buzzer]` | `2` | `[Points and gameplay audio feedback]` |
+| `[Breadboard]` | `1` | `[Circuitry]` |
 
 ## 9.2 Wiring Plan
 Describe the main electrical connections.
@@ -384,10 +390,10 @@ Insert a hand-drawn or software-made circuit diagram.
 
 | Question | Response |
 |---|---|
-| Power source | `[USB / battery / adapter / other]` |
-| Voltage required | `[Write here]` |
-| Current concerns | `[Write here]` |
-| Safety concerns | `[Write here]` |
+| Power source | `[External Breadboard Power suppply module - Adapter ]` |
+| Voltage required | `[5V]` |
+| Current concerns | `[Excess voltage from non-optimal power supply module - RGB strip damage]` |
+| Safety concerns | `[Power supply shortage and incorrect voltage]` |
 
 ---
 
@@ -490,9 +496,9 @@ Insert a sketch or screenshot of the app interface.
 
 | Item | Quantity | In Kit? | Need to Buy? | Estimated Cost | Material / Spec | Why This Choice? |
 |---|---:|---|---|---:|---|---|
-| `[ESP32]` | `1` | `Yes` | `No` | `0` | `[Spec]` | `[Reason]` |
-| `[Item]` | `[Qty]` | `[Yes/No]` | `[Yes/No]` | `[Cost]` | `[Spec]` | `[Reason]` |
-| `[Item]` | `[Qty]` | `[Yes/No]` | `[Yes/No]` | `[Cost]` | `[Spec]` | `[Reason]` |
+| `[ESP32]` | `1` | `Yes` | `No` | `0` | `[********]` | `[Wifi support and sufficient pin inputs]` |
+| `[Servo motor - microservo SG90]` | `[1]` | `[Yes]` | `[No]` | `[0]` | `[5V servo]` | `[******]` |
+| `[]` | `[Qty]` | `[Yes/No]` | `[Yes/No]` | `[Cost]` | `[Spec]` | `[Reason]` |
 
 ## 12.2 Material Justification
 Explain why you selected your main materials and components.
@@ -510,25 +516,26 @@ Examples:
 
 | Item | Why Needed | Purchase Link | Latest Safe Date to Procure | Status |
 |---|---|---|---|---|
-| `[Item]` | `[Reason]` | `[Link]` | `[Date]` | `[Pending / Ordered / Received]` |
-| `[Item]` | `[Reason]` | `[Link]` | `[Date]` | `[Pending / Ordered / Received]` |
+| `[RGB strip - WS2928B]` | `[Continous addressable lights for accurate point indicators]` | `[Link]` | `[Date]` | `[Recieved]` |
+| `[Push Buttons]` | `[Buttons in Kits are tall making them loose at the top]` | `[Link]` | `[Date]` | `[Recieved]` |
 
 ## 12.4 Budget Summary
 
 | Budget Item | Estimated Cost |
 |---|---:|
-| Electronics | `[Cost]` |
-| Mechanical parts | `[Cost]` |
-| Fabrication materials | `[Cost]` |
-| Purchased extras | `[Cost]` |
-| Contingency | `[Cost]` |
-| **Total** | `[Cost]` |
+| Electronics | `[0]` |
+| Mechanical parts | `[0]` |
+| Fabrication materials | `[0]` |
+| Purchased extras | `[504]` |
+| Contingency | `[0]` |
+| **Total** | `[504]` |
 
 ## 12.5 Budget Reflection
 If your cost is too high, what can be simplified, removed, substituted, or shared?
 
 **Response:**  
-`[Write here]`
+`[The cost of the RGBs was fairly last minute and unnecessary as the batch had in collective multiple rolls oof RGB lights. Extra purchased push buttons were
+very small as we did not check specs on the related site.]`
 
 ---
 
@@ -545,7 +552,13 @@ Include:
 - how documentation will be maintained.
 
 **Response:**  
-`[Write here]`
+`[Division of tasks: 
+Tasks are divided based on the original job assigned, 
+Coding and programming - Advaith 
+MEchanics and fabrication - Nishad
+Decision making : 
+Decisions are made based on team consensus. 
+In case of disagreements, the logically feasible route is selected]`
 
 ## 13.2 Task Breakdown
 
