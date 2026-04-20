@@ -176,7 +176,7 @@ The player disengages after reaching a point of satisfaction, fatigue, or curios
 
 | Question | Response |
 |---|---|
-| Who is this for? | `People interesting in playing short games` |
+| Who is this for? | `People interested in playing short games` |
 | Age range | `12+` |
 | Solo or multiplayer | `Solo` |
 | Expected duration of one round | `5 minutes (depending on character picked)` |
@@ -238,17 +238,17 @@ What features are nice to have but not essential?
 ## 6.1 Project Type
 Check all that apply.
 
-- [ ] Electronics-based
-- [ ] Mechanical
+- [O] Electronics-based
+- [O] Mechanical
 - [ ] Sensor-based
 - [ ] App-connected
-- [ ] Motorized
+- [O] Motorized
 - [ ] Sound-based
 - [ ] Light-based
 - [ ] Screen/UI-based
-- [ ] Fabricated structure
+- [O] Fabricated structure
 - [ ] Game logic based
-- [ ] Installation / tabletop experience
+- [O] Installation / tabletop experience
 - [ ] Other: `[Write here]`
 
 ## 6.2 High-Level System Description
@@ -320,7 +320,7 @@ Check all that apply.
 - [ ] Belt drives
 - [ ] Linkages
 - [ ] Hinges
-- [/] Shafts
+- [O] Shafts
 - [ ] Springs
 - [ ] Bearings
 - [ ] Wheels
@@ -498,7 +498,9 @@ Insert a sketch or screenshot of the app interface.
 |---|---:|---|---|---:|---|---|
 | `[ESP32]` | `1` | `Yes` | `No` | `0` | `[********]` | `[Wifi support and sufficient pin inputs]` |
 | `[Servo motor - microservo SG90]` | `[1]` | `[Yes]` | `[No]` | `[0]` | `[5V servo]` | `[******]` |
-| `[]` | `[Qty]` | `[Yes/No]` | `[Yes/No]` | `[Cost]` | `[Spec]` | `[Reason]` |
+| `[External BreadBoard Power Supply - MB102 ]` | `[1]` | `[Yes]` | `[No]` | `[0]` | `[Spec]` | `[5V power supply]` |
+| `[Buzzer- Active]` | `[2]` | `[Yes]` | `[No]` | `[0]` | `[]` | `[******]` |
+
 
 ## 12.2 Material Justification
 Explain why you selected your main materials and components.
@@ -564,26 +566,27 @@ In case of disagreements, the logically feasible route is selected]`
 
 | Task ID | Task | Owner | Estimated Hours | Deadline | Dependency | Status |
 |---|---|---|---:|---|---|---|
-| T1 | `[Finalize concept]` | `[Name]` | `2` | `[Date]` | `None` | `To Do` |
-| T2 | `[Complete BOM]` | `[Name]` | `1` | `[Date]` | `T1` | `To Do` |
-| T3 | `[Test electronics]` | `[Name]` | `2` | `[Date]` | `T1` | `To Do` |
-| T4 | `[Build structure]` | `[Name]` | `4` | `[Date]` | `T1` | `To Do` |
-| T5 | `[Write control code]` | `[Name]` | `4` | `[Date]` | `T3` | `To Do` |
-| T6 | `[Integrate system]` | `[Name]` | `4` | `[Date]` | `T4, T5` | `To Do` |
-| T7 | `[Playtest]` | `[Name]` | `2` | `[Date]` | `T6` | `To Do` |
-| T8 | `[Refine and document]` | `[Name]` | `3` | `[Date]` | `T7` | `To Do` |
+| T1 | `[Finalize concept]` | `[Advaith]` | `2` | `[Date]` | `None` | `Complete` |
+| T2 | `[Complete BOM]` | `[Nishad]` | `1` | `[Date]` | `T1` | `Cmplete` |
+| T3 | `[Test electronics]` | `[Advaith]` | `2` | `[Date]` | `T1` | `Comlete` |
+| T4 | `[Design fabrication structure]` | `[Nishad]` | `2` | `[Date]` | `T1` | `Complete` |
+| T5 | `[Build fabrication structure]` | `[Nishad]` | `4` | `[Date]` | `T` | `Complete` |
+| T6 | `[Write control code]` | `[Advaith]` | `4` | `[Date]` | `T3` | `Complete` |
+| T7 | `[Integrate system]` | `[Advaith]` | `4` | `[Date]` | `T4, T5` | `Complete` |
+| T8 | `[Playtest]` | `[Advaith]` | `2` | `[Date]` | `T6` | `Comlete` |
+| T9 | `[Refine and document]` | `[Nishad]` | `3` | `[Date]` | `T1-T8` | `To Do` |
 
 ## 13.3 Responsibility Split
 
 | Area | Main Owner | Support Owner |
 |---|---|---|
-| Concept and gameplay | `[Name]` | `[Name]` |
-| Electronics | `[Name]` | `[Name]` |
-| Coding | `[Name]` | `[Name]` |
-| App | `[Name]` | `[Name]` |
-| Mechanical build | `[Name]` | `[Name]` |
-| Testing | `[Name]` | `[Name]` |
-| Documentation | `[Name]` | `[Name]` |
+| Concept and gameplay | `[Advaith]` | `[Nishad]` |
+| Electronics | `[Nishad]` | `[Advaith]` |
+| Coding | `[Advaith]` | `[Nishad]` |
+| App | `[Advaith]` | `[Nishad]` |
+| Mechanical build | `[Nishad]` | `[Advaith]` |
+| Testing | `[Advaith]` | `[Nishad]` |
+| Documentation | `[Nishad]` | `[Advaith]` |
 
 ---
 
@@ -593,37 +596,37 @@ In case of disagreements, the logically feasible route is selected]`
 
 ### Week 1 — Plan and De-risk
 Expected outcomes:
-- [ ] Idea finalized
+- [O] Idea finalized
 - [ ] Core interaction decided
-- [ ] Sketches made
+- [O] Sketches made
 - [ ] BOM completed
 - [ ] Purchase needs identified
 - [ ] Key uncertainty identified
-- [ ] Basic feasibility tested
+- [O] Basic feasibility tested
 
 ### Week 2 — Build Subsystems
 Expected outcomes:
 - [ ] Electronics tests completed
-- [ ] CAD / structure planning completed
+- [O] CAD / structure planning completed
 - [ ] App UI started if needed
-- [ ] Mechanical concept tested
+- [O] Mechanical concept tested
 - [ ] Main subsystems partially working
 
 ### Week 3 — Integrate
 Expected outcomes:
-- [ ] Physical body built
+- [O] Physical body built
 - [ ] Electronics integrated
 - [ ] Code connected to hardware
 - [ ] App connected if required
-- [ ] First playable version exists
+- [O] First playable version exists
 
 ### Week 4 — Refine and Finish
 Expected outcomes:
-- [ ] Technical bugs reduced
-- [ ] Playtesting completed
+- [O] Technical bugs reduced
+- [O] Playtesting completed
 - [ ] Improvements made
 - [ ] Documentation completed
-- [ ] Final build ready
+- [O] Final build ready
 
 ## 14.2 Weekly Update Log
 
@@ -642,9 +645,9 @@ Expected outcomes:
 
 | Risk | Type | Likelihood | Impact | Mitigation Plan | Owner |
 |---|---|---|---|---|---|
-| `[Example: Bluetooth disconnects]` | `Technical` | `Medium` | `High` | `[Fallback interaction / simplify connection flow]` | `[Name]` |
-| `[Example: Structure breaks during play]` | `Mechanical` | `Medium` | `High` | `[Reinforce joints / change material]` | `[Name]` |
-| `[Risk]` | `[Technical / Material / Time / Gameplay]` | `[Low/Medium/High]` | `[Low/Medium/High]` | `[Plan]` | `[Name]` |
+| `[Unbalanced game / technical bugs in the game]` | `Technical/ code` | `Low` | `High` | `[Playtesting, Scenario mapping, overall balance coding]` | `[Advaith]` |
+| `[Button structure breaks and falls inside during play]` | `Mechanical` | `Medium` | `High` | `[Reinforce the adhesive of the button layer to the board]` | `[Nishad]` |
+| `[Jumper Wire gets loose]` | `[Electronic]` | `[High]` | `[]` | `[Plan]` | `[Name]` |
 | `[Risk]` | `[Type]` | `[Low/Medium/High]` | `[Low/Medium/High]` | `[Plan]` | `[Name]` |
 
 ## 15.2 Biggest Unknown Right Now
