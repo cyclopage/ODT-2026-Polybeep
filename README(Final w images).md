@@ -475,7 +475,7 @@ Suggested sequence:
 - error handling.
 
 **Insert image below:**  
-<img src="<img width="932" height="1280" alt="image" src="https://github.com/user-attachments/assets/7e066299-ca0c-493d-8804-3b4c82a8db9c" />
+<img src="<img width="461" height="640" alt="image" src="https://github.com/user-attachments/assets/7e066299-ca0c-493d-8804-3b4c82a8db9c" />
 " width="400">
 
 ## 10.4 Pseudocode
