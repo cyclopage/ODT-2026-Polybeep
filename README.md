@@ -427,7 +427,9 @@ What changed after the CAD, animation, or simulation stage?
 Describe the main electrical connections.
 
 **Response:**  
-`[Main electrical connections include the following:......]`
+`[Main electrical connections include the following : 
+The Buttoons connected through the ESP32 for #V for Power and input
+The RGB and Servo Connected to Power supply for 5V and ESP 32 for input]`
 
 ## 9.3 Circuit Diagram
 Insert a hand-drawn or software-made circuit diagram.
@@ -589,7 +591,7 @@ Examples:
 - Why bearing instead of a plain shaft hole?
 
 **Response:**  
-`[Write here]`
+`[The split mechanic would be the first addition — it is already partially implemented in the codebase and represents the single highest-value gameplay expansion without requiring any new hardware. Enabling it would meaningfully deepen the strategic space and give players a reason to return to opponents they have already beaten, which directly strengthens the replay loop the project is built around.]`
 
 ## 12.3 Items to Purchase Separately
 
@@ -823,23 +825,23 @@ Example:
 Describe the final version of your project.
 
 **Response:**  
-`[Write here]`
+`[Chopsticks Arcade is a physical, panel-based two-player strategy device built around an ESP32 microcontroller. The player faces a button panel with four tactile inputs representing the two hands in play, and two sets of LEDs displaying live finger counts for both sides. A servo-driven rotating shaft mounted on the enclosure displays the selected AI character as a physical graphic face. Before play begins, the player selects an AI opponent through a companion mobile app connected via Bluetooth, which signals the servo to rotate to the corresponding character face. Once the match starts, the app is set aside and all interaction happens entirely through the physical device — buttons to move, LEds to track state, and a buzzer to signal moves, eliminations, and round outcomes. The AI responds automatically after each player move, with behavior determined by the character selected. A reset button returns the system to a neutral state for immediate replay.]`
 
 ## 18.2 What Works Well
-- `[Point 1]`
-- `[Point 2]`
-- `[Point 3]`
+- `[The button-to-LED interaction is immediately legible — players understand which buttons correspond to which hands without instruction, and the finger count display reads naturally from the first move]`
+- `[The AI response timing feels intentional and readable, creating a genuine sense of turn-taking rather than instant or arbitrary machine behavior]`
+- `[The servo rotation successfully externalises character selection as a physical event, making the choice of opponent feel like a tangible, deliberate action rather than a menu selection]`
 
 ## 18.3 What Still Needs Improvement
-- `[Point 1]`
-- `[Point 2]`
-- `[Point 3]`
+- `[The servo positioning occasionally requires recalibration, as minor misalignment can leave the shaft between two character faces rather than cleanly presenting one]`
+- `[Audio feedback is functional but undifferentiated — buzzer sounds currently serve as confirmation cues but do not yet reflect the personality or difficulty of the active AI character]`
+- `[The companion app handles character selection but the Bluetooth pairing process adds friction at the start of a session, slowing down the first interaction before play begins]`
 
 ## 18.4 What Changed From the Original Plan
 How did the project change from the initial idea?
 
 **Response:**  
-`[Write here]`
+`[he core game mechanic and hardware approach remained consistent throughout, but several features were descoped or deferred during the build. The split mechanic, originally intended as part of the base ruleset, was pushed to a later build layer once it became clear that the attack-only version was sufficient to validate the core interaction. The sticks-as-counter concept, which would have replaced LEDs with physical rods as finger count indicators, was recognised early as too mechanically complex for the project timeline and moved to stretch features. The servo character display was added as a deliberate physical design choice to avoid any reliance on screens, reinforcing the project's commitment to tangible, embedded feedback over digital interfaces.]`
 
 ---
 
@@ -851,7 +853,7 @@ What slowed you down?
 How well did you manage time, tasks, and responsibilities?
 
 **Response:**  
-`[Write here]`
+`[The division of responsibilities between coding and fabrication kept the two workstreams largely parallel and reduced bottlenecks during independent development. The most productive sessions were the interdependent ones — where Advaith's logic needed to map directly onto Nishad's physical layout — because they forced both sides to communicate precisely about how the system fit together. Time management held well in the early phases but compressed toward integration, which is where most of the debugging happened. In a longer project, earlier integration testing would have caught hardware-software conflicts before they stacked up.]`
 
 ## 19.2 Technical Reflection
 What did you learn about:
@@ -862,7 +864,11 @@ What did you learn about:
 - integration?
 
 **Response:**  
-`[Write here]`
+`[Electronics — resistor selection for LEDs and clean button debouncing were more detail-sensitive than expected; small errors here produced inconsistent behavior that was difficult to trace at first
+Coding — structuring the AI logic as modular, swappable decision models early made it significantly easier to add and test new characters without rewriting the game loop
+Mechanisms — servo calibration is less forgiving than expected at small angular increments; a startup home-position routine proved necessary for consistent character display
+Fabrication — panel layout required more iteration than anticipated, particularly aligning button placement with the spatial logic of the game in a way that felt intuitive without labelling
+Integration — Bluetooth handoff between the app and the ESP32 was the most fragile point in the system, requiring careful state management to ensure the device was ready to receive before the app transmitted]`
 
 ## 19.3 Design Reflection
 What did you learn about:
@@ -874,13 +880,18 @@ What did you learn about:
 - iteration?
 
 **Response:**  
-`[Write here]`
+`[Designing for play - the game needed almost no instruction when the physical layout mirrored the logic of the original hand game; spatial familiarity did most of the onboarding work
+Delight - the servo rotation was consistently the moment players responded to most visibly; physical movement carries more presence than a screen update of equivalent information
+Clarity - LED finger counts were universally understood, but win and loss states needed stronger audio differentiation to feel conclusive rather than just another state change
+Physical interaction - button feel matters more than expected; the tactile response of the press itself communicates feedback before the LEDs update, and a mushy or inconsistent button undermines confidence in the input
+Player understanding - players began forming theories about the AI's behavior within two or three rounds, which is exactly the intended experience; the consistency of the AI logic is what makes this possible
+Iteration - the most useful design feedback came from watching a first-time player's hands, not their words; where they hesitated or pressed the wrong button identified layout problems faster than any verbal debrief]`
 
 ## 19.4 If You Had One More Week
 What would you improve next?
 
 **Response:**  
-`[Write here]`
+`[The split mechanic would be the first addition — it is already partially implemented in the codebase and represents the single highest-value gameplay expansion without requiring any new hardware. Enabling it would meaningfully deepen the strategic space and give players a reason to return to opponents they have already beaten, which directly strengthens the replay loop the project is built around.]`
 
 ---
 
@@ -889,22 +900,22 @@ What would you improve next?
 Before submission, confirm that:
 - [O] Team details are complete
 - [O] Project description is complete
-- [ ] Inspiration sources are included
-- [ ] Player journey is written
-- [ ] Sketches are added
-- [ ] BOM is complete
-- [ ] Purchase list is complete
-- [ ] Budget summary is complete
-- [ ] Mechanical planning is documented if applicable
-- [ ] App planning is documented if applicable
-- [ ] Code flowchart is added
-- [ ] Task breakdown is complete
-- [ ] Weekly logs are updated
-- [ ] Risk register is complete
-- [ ] Testing log is updated
-- [ ] Playtesting notes are included
-- [ ] Build photos are included
-- [ ] Final reflection is written
+- [O ] Inspiration sources are included
+- [O] Player journey is written
+- [O] Sketches are added
+- [O] BOM is complete
+- [O] Purchase list is complete
+- [O] Budget summary is complete
+- [O] Mechanical planning is documented if applicable
+- [O] App planning is documented if applicable
+- [O] Code flowchart is added
+- [O] Task breakdown is complete
+- [O] Weekly logs are updated
+- [O] Risk register is complete
+- [O] Testing log is updated
+- [O] Playtesting notes are included
+- [O] Build photos are included
+- [O] Final reflection is written
 
 ---
 
@@ -937,9 +948,9 @@ project-repo/
 # 22. Instructor Review
 
 ## 22.1 Proposal Approval
-- [ ] Approved to proceed
-- [ ] Approved with changes
-- [ ] Rework required before proceeding
+- [O] Approved to proceed
+- [O] Approved with changes
+- [O] Rework required before proceeding
 
 **Instructor comments:**  
 `[Instructor fills this section]`
