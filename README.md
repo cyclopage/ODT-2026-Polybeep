@@ -235,11 +235,11 @@ The player may select the same AI opponent or choose a different one before the 
 ## 5.1 Definition of “Playable”
 Your project will be considered complete only if these conditions are met.
 
-- [ ] `[The player can infer that the device represents the Chopsticks game through its layout without needing a verbal explanation.]`
-- [ ] `[The player can correctly interpret LED states as numerical values (finger counts) and use this to make valid moves.]`
-- [ ] `[The AI responds within a consistent time frame and "personality", making its “turn” feel intentional and readable rather than random or laggy.]`
-- [ ] `[Each AI character exhibits its defined behavior clearly (e.g., altered win conditions, extra life, extended thresholds, or optimal play), such that the player can distinguish between them through interaction alone]`
-- [ ] `[The game reaches a definitive end state where one side has lost both hands, and this outcome is clearly signaled through the system’s feedback.]`
+- [o] `[The player can infer that the device represents the Chopsticks game through its layout without needing a verbal explanation.]`
+- [o] `[The player can correctly interpret LED states as numerical values (finger counts) and use this to make valid moves.]`
+- [o] `[The AI responds within a consistent time frame and "personality", making its “turn” feel intentional and readable rather than random or laggy.]`
+- [o] `[Each AI character exhibits its defined behavior clearly (e.g., altered win conditions, extra life, extended thresholds, or optimal play), such that the player can distinguish between them through interaction alone]`
+- [o] `[The game reaches a definitive end state where one side has lost both hands, and this outcome is clearly signaled through the system’s feedback.]`
 
 ## 5.2 Minimum Viable Version
 What is the smallest version of this project that still delivers the core experience?
@@ -428,7 +428,7 @@ Describe the main electrical connections.
 
 **Response:**  
 `[Main electrical connections include the following : 
-The Buttoons connected through the ESP32 for #V for Power and input
+The Buttoons connected through the ESP32 for 3V for Power and input through GPIO pins
 The RGB and Servo Connected to Power supply for 5V and ESP 32 for input]`
 
 ## 9.3 Circuit Diagram
@@ -526,7 +526,7 @@ Suggested sequence:
 # 11. MIT App Inventor Plan
 
 ## 11.1 Is an app part of this project?
-- [ ] Yes
+- [o]] Yes
 - [ ] No
 
 If yes, complete this section.
@@ -543,15 +543,17 @@ Examples:
 - displaying data.
 
 **Response:**  
-`[Write here]`
+`[The app synonym was an html website:
+-The website allows players to select characters - mode selection and displays the characteristics of those modes for reference
+-The website allows players to lookthrough the modes before they engage with any one of it ]`
 
 ## 11.3 App Features
 
 | Feature | Purpose |
 |---|---|
-| `[Bluetooth connect button]` | `[Purpose]` |
-| `[Score display]` | `[Purpose]` |
-| `[Control button / slider / label]` | `[Purpose]` |
+| `AI character / mode selection button` | `[Allows players to select the AI mode they want to play against]` |
+| `[Back option]` | `[Players can decide to go back to the selection screen if they wish to play with anaither character]` |
+| `[In play screen]` | `[Indicates that a game is in progress]` |
 
 ## 11.4 UI Mockup
 Insert a sketch or screenshot of the app interface.
@@ -561,10 +563,9 @@ Insert a sketch or screenshot of the app interface.
 
 ## 11.5 App Screen Flow
 
-1. `[Step 1]`
-2. `[Step 2]`
-3. `[Step 3]`
-4. `[Step 4]`
+1. `[Mode selection screen - Four blocks players can select]`
+2. `[Mode info screen - Displays the characteristic of the mode and allows players to decide whether to continue playing go back incase they decide otherwise ]`
+3. `[In-Game Screen - Indication of a live Game]`
 
 ---
 
@@ -597,8 +598,8 @@ Examples:
 
 | Item | Why Needed | Purchase Link | Latest Safe Date to Procure | Status |
 |---|---|---|---|---|
-| `[RGB strip - WS2928B]` | `[Continous addressable lights for accurate point indicators]` | `[Link]` | `[Date]` | `[Recieved]` |
-| `[Push Buttons]` | `[Buttons in Kits are tall making them loose at the top]` | `[Link]` | `[Date]` | `[Recieved]` |
+| `[RGB strip - WS2928B]` | `[Continous addressable lights for accurate point indicators]` | `[https://robu.in/product/1m-ws2812b-5v-addressable-rgb-non-waterproof-led-strip-light-60leds-m]` | `[Date]` | `[Recieved]` |
+| `[Push Buttons]` | `[Buttons in Kits are tall making them loose at the top]` | `[https://robu.in/product/12x12x7-3mm-tactile-push-button-switch-round]` | `[Date]` | `[Recieved]` |
 
 ## 12.4 Budget Summary
 
@@ -726,13 +727,14 @@ Expected outcomes:
 |---|---|---|---|---|---|
 | `[Unbalanced game / technical bugs in the game]` | `Technical/ code` | `Low` | `High` | `[Playtesting, Scenario mapping, overall balance coding]` | `[Advaith]` |
 | `[Button structure breaks and falls inside during play]` | `Mechanical` | `Medium` | `High` | `[Reinforce the adhesive of the button layer to the board]` | `[Nishad]` |
+| `[AI modes loop the game using their abilities]` | `code` | `High` | `High` | `[Add radnom move percentages so that the Ai modes have a chance of playing a random move]` | `[Advaith]` |
 
 
 ## 15.2 Biggest Unknown Right Now
 What is the single biggest uncertainty in your project at this stage?
 
 **Response:**  
-`[Write here]`
+`[Html setup and communication through esp32 wifi]`
 
 ---
 
@@ -742,26 +744,22 @@ What is the single biggest uncertainty in your project at this stage?
 
 | What Needs Testing | How You Will Test It | Success Condition |
 |---|---|---|
-| `[Bluetooth connection]` | `[Method]` | `[What counts as success?]` |
-| `[Mechanism movement]` | `[Method]` | `[What counts as success?]` |
-| `[Sensor behavior]` | `[Method]` | `[What counts as success?]` |
-| `[App communication]` | `[Method]` | `[What counts as success?]` |
+| `[Servo Mechanism movement]` | `[USing the start angle as the base and shifting to the game modes to see if the servo lands on the wrong angle]` | `[The servo rotates accurately bringing the correct character display to the front of the game?]` |
 
 ## 16.2 Playtesting Plan
 
 | Question | How You Will Check |
 |---|---|
-| Do players understand what to do? | `[Method]` |
-| Is the interaction satisfying? | `[Method]` |
-| Do players want another turn? | `[Method]` |
-| Is the challenge balanced? | `[Method]` |
-| Is the response clear and immediate? | `[Method]` |
+| Do players understand what to do? | `[Through the 2-3 rounds of play, we will observe how comfortable the players are around the game board. Visual confirmation - pauses before playing, Wrong buttons clicked and verbal confirmation - players talking out their strategies and affirmation, will be some of the metrics use to determine the success of the test.]` |
+| Is the interaction satisfying? | `[Verbal affirmation and smooth use of the game. Non obstructed movement of players hands while operatinig the game, clear feedback on the player understanding the outcome of the game]` |
+| Do players want another turn? | `[Verbal confirmation players trying to go through the modes to play]` |
+| Is the challenge balanced? | `[Compare players results and observe patterns in how the AI modes play. If the abilities break the game or set the game in a loop]` |
+| Is the response clear and immediate? | `[Observation - Delay in pressing buttons by players, Players forgetting rules,Players reaction to AI mode abilities - which should ideally be not surprising]` |
 
 ## 16.3 Testing and Debugging Log
 
 | Date | Problem Found | Type | What You Tried | Result | Next Action |
 |---|---|---|---|---|---|
-| `[19th April]` | `[The External power supplies kept supplying 12V instead of 5V]` | `[Electrical]` | `[Found a new power supply module and reserved from all possible problematic connections- middle rail of breadboard]` | `[Worked]` | `[Always checking the power supply module with a multimeter]` |
 | `[19th April]` | `[The External power supplies kept supplying 12V instead of 5V]` | `[Electrical]` | `[Found a new power supply module and reserved from all possible problematic connections- middle rail of breadboard]` | `[Worked]` | `[Always checking the power supply module with a multimeter]` |
 | `[19th]` | `[RGB strips stopped working as a result of the broken power supply modules]` | `[Electrical]` | `[Replaced all the strips with new ones]` | `[Worked]` | `[Keeping a check on the voltage of the power supply module ]` |
 
@@ -789,7 +787,8 @@ Include:
 - revisions.
 
 **Response:**  
-`[Write here]`
+`[The physical build started with an approximation of how much space the internal workings would take. Then using this information, a box contraption was designed that allowed for the breadboard to fit in, slots for buttons to fit and poke through for interaction and a surface for the RGBs to rest on. Also the contraption included the support of the shaft axle mechanism which included a space for the Servo motor and the Skewer shaft. This box was laser cut using 3mm MDF board and assembled using the laser cut finger joints and adhesive - wood glue.
+To keep the wiring intact on the bread board, solder was placed on the ends of the jumper wires making them anchor inside the breadboard.]`
 
 ## 17.2 Build Photos
 Add photos throughout the project.
@@ -813,7 +812,7 @@ Example:
 
 | Version | Date | What Changed | Why |
 |---|---|---|---|
-| `v1` | `[Date]` | `[Describe]` | `[Reason]` |
+| `v1` | `[6th]` | `[.]` | `[Reason]` |
 | `v2` | `[Date]` | `[Describe]` | `[Reason]` |
 | `v3` | `[Date]` | `[Describe]` | `[Reason]` |
 
@@ -825,17 +824,18 @@ Example:
 Describe the final version of your project.
 
 **Response:**  
-`[Chopsticks Arcade is a physical, panel-based two-player strategy device built around an ESP32 microcontroller. The player faces a button panel with four tactile inputs representing the two hands in play, and two sets of LEDs displaying live finger counts for both sides. A servo-driven rotating shaft mounted on the enclosure displays the selected AI character as a physical graphic face. Before play begins, the player selects an AI opponent through a companion mobile app connected via Bluetooth, which signals the servo to rotate to the corresponding character face. Once the match starts, the app is set aside and all interaction happens entirely through the physical device — buttons to move, LEds to track state, and a buzzer to signal moves, eliminations, and round outcomes. The AI responds automatically after each player move, with behavior determined by the character selected. A reset button returns the system to a neutral state for immediate replay.]`
+`[Choppy Beeps is a physical, panel-based two-player strategy device built around an ESP32 microcontroller. The player faces a button panel with four tactile inputs representing the two hands in play, and four sets of RGB strips displaying live finger counts for both sides. A servo-driven rotating shaft mounted on the enclosure displays the selected AI character as a physical graphic. Before play begins, the player selects an AI opponent through a companion mobile app / website connected via Wifi, which signals the servo to rotate to the corresponding character face. Once the match starts, the app is set aside and all interaction happens entirely through the physical device — buttons to move, RGBs to track state, and a buzzer to signal moves, eliminations, and round outcomes. The AI responds automatically after each player move, with behavior determined by the character selected. A reset button returns the system to a neutral state for immediate replay.]`
 
 ## 18.2 What Works Well
-- `[The button-to-LED interaction is immediately legible — players understand which buttons correspond to which hands without instruction, and the finger count display reads naturally from the first move]`
-- `[The AI response timing feels intentional and readable, creating a genuine sense of turn-taking rather than instant or arbitrary machine behavior]`
+- `[The button-to-RGB interaction — The RGBs immidiately respond to the buttons and establish hthe intuitive connection between the buttons and the lights as points ]`
 - `[The servo rotation successfully externalises character selection as a physical event, making the choice of opponent feel like a tangible, deliberate action rather than a menu selection]`
+- `[The Buzzers react appropriately to the buttons, win/loss events]`
+- - `[The AI modes adequately execute their abilities]`
 
 ## 18.3 What Still Needs Improvement
 - `[The servo positioning occasionally requires recalibration, as minor misalignment can leave the shaft between two character faces rather than cleanly presenting one]`
 - `[Audio feedback is functional but undifferentiated — buzzer sounds currently serve as confirmation cues but do not yet reflect the personality or difficulty of the active AI character]`
-- `[The companion app handles character selection but the Bluetooth pairing process adds friction at the start of a session, slowing down the first interaction before play begins]`
+
 
 ## 18.4 What Changed From the Original Plan
 How did the project change from the initial idea?
