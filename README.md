@@ -197,13 +197,36 @@ Describe exactly how a player will use the project.
 ## 4.4 Rules of Play
 If your project is a game, list the rules clearly.
 
-- `Starting State
-
-Each player begins with 1 finger on each hand.
-The system randomly determines who takes the first turn.`
-- `[Rule 2]`
-- `[Rule 3]`
-- `[Rule 4]`
+- `[Starting State]`
+- `[Each player begins with 1 finger on each hand.
+The system randomly determines who takes the first turn.]`
+- `[On Your Turn — Attack]`
+- `[Select one of your active hands (a hand with at least 1 finger).
+Select one of your opponent's active hands (a hand with at least 1 finger).
+Add your selected hand's finger count to the opponent's targeted hand.
+If the result equals or exceeds 5, that hand is eliminated (set to 0).
+If the result is exactly 5 in standard mode, the hand is eliminated. In extended threshold modes, the limit may differ.]`
+- `[On Your Turn — Split (where enabled)]`
+- `[Instead of attacking, you may redistribute fingers between your own two hands.
+The total finger count across both hands must remain the same.
+You cannot split into a state that already existed on your previous turn (no stalling).
+A hand with 0 fingers (eliminated) can be revived through a valid split.
+Splitting is only valid if it produces a new, distinct hand state.]`
+- `[Hand Elimination]`
+- `[A hand is eliminated when its count reaches the active threshold (default: 5).
+An eliminated hand shows 0 fingers and cannot be used to attack.
+An eliminated hand may be revived only through a legal split.]`
+- `[Winning Condition]`
+- `[A player loses when both their hands are eliminated (both at 0).
+The opponent is declared the winner immediately.
+The system signals this outcome through LED and audio feedback.]`
+- `[Turn Structure]`
+- `[Turns alternate strictly between the player and the AI.
+The AI responds within a consistent, perceptible time window — its move is intentional and readable, not instant.
+Each turn consists of exactly one action: either an attack or a split.]`
+- `[Reset]`
+- `[After a round ends, the player presses the reset button in the app to return all hands to their starting state (1 finger each).
+The player may select the same AI opponent or choose a different one before the next round begins.]`
 
 ---
 
@@ -212,24 +235,30 @@ The system randomly determines who takes the first turn.`
 ## 5.1 Definition of “Playable”
 Your project will be considered complete only if these conditions are met.
 
-- [ ] `[Condition 1]`
-- [ ] `[Condition 2]`
-- [ ] `[Condition 3]`
-- [ ] `[Condition 4]`
-- [ ] `[Condition 5]`
+- [ ] `[The player can infer that the device represents the Chopsticks game through its layout without needing a verbal explanation.]`
+- [ ] `[The player can correctly interpret LED states as numerical values (finger counts) and use this to make valid moves.]`
+- [ ] `[The AI responds within a consistent time frame and "personality", making its “turn” feel intentional and readable rather than random or laggy.]`
+- [ ] `[Each AI character exhibits its defined behavior clearly (e.g., altered win conditions, extra life, extended thresholds, or optimal play), such that the player can distinguish between them through interaction alone]`
+- [ ] `[The game reaches a definitive end state where one side has lost both hands, and this outcome is clearly signaled through the system’s feedback.]`
 
 ## 5.2 Minimum Viable Version
 What is the smallest version of this project that still delivers the core experience?
 
 **Response:**  
-`[Write here]`
+`[The smallest version that still delivers the core experience is a single-player, single-AI, physical Chopsticks game with no character selection and no companion app. The primary experience such as the physical input, immediate system response, and the tension of playing against a machine that behaves consistently.
+The MVP is an ESP32 with four buttons, two sets of LEDs showing finger counts, and a buzzer — one precoded AI, standard Chopsticks rules, attack only, reset button, nothing else. It works because the core loop is fully intact: you press a button, the LEDs update players wait for the machine to respond, the machine responds.]`
 
 ## 5.3 Stretch Features
 What features are nice to have but not essential?
 
-- `[Stretch feature 1]`
-- `[Stretch feature 2]`
-- `[Stretch feature 3]`
+- `[App & presentation:
+Companion mobile app and character selection UI — polishes the framing but the game works without it
+Distinct sound signatures per AI character — deepens personality without changing the strategic encounter
+Physical interface ]`
+- `[Tactile stick as a pressable input — reinforces the hand game metaphor, makes attacks feel more deliberate than a button press; stays stretch because a button proves the interaction just as well and fabrication risk is real]`
+- `[Gameplay:
+Two-player mode — second human replaces the AI, device becomes referee and state tracker rather than opponent
+Difficulty progression — automatically advances AI character after consecutive wins, removes need to manually select harder opponents]`
 
 ---
 
@@ -262,16 +291,28 @@ Include:
 - app interaction if any.
 
 **Response:**  
-`[Write here]`
+`[The system is a physical two-player strategy device built around an ESP32 microcontroller. The player interacts with it through buttons, receives feedback through LEDs and sound, and optionally configures it through a companion mobile app before play begins.
+Input:
+The player presses one of four buttons — two representing their own hands, two representing the opponent's hands — to select and execute a move. A fifth button resets the round. The buttons are the only physical input during gameplay; all game logic is driven entirely by which button is pressed and when.
+Processing:
+The ESP32 receives each button press, determines the current game state, validates the move, updates finger counts, checks for elimination and win conditions, and then runs the active AI's decision model to generate a response move. This all happens within a single turn cycle. The AI logic is stored directly on the microcontroller as precomputed or rule-based decision code, requiring no external connection during play.
+Output:
+Two sets of LEDs display the current finger count for each hand — player and AI. A buzzer produces audio cues for move confirmation, hand elimination, and round end. All game state is communicated exclusively through these outputs; no screen is used.
+Physical Structure
+The device is a panel-based enclosure with the player's buttons and LEDs on one side and the AI's hand state displayed on the other. The ESP32 and supporting circuitry sit inside the enclosure. The layout mirrors the spatial logic of the original hand game — two hands facing two hands.
+App Interaction:
+A companion app connects to the device via Bluetooth before a match begins. It is used to select the AI opponent and configure the match conditions. Once the game starts, the app is no longer needed — all interaction moves entirely to the physical device.]`
 
 ## 6.3 Input / Output Map
 
 | System Part | Type | What It Does |
 |---|---|---|
-| `[Button / Sensor / Switch / App Input]` | Input | `[Describe]` |
-| `[ESP32 / Controller]` | Processing | `[Describe]` |
-| `[LED / Motor / Servo / Buzzer / Display]` | Output | `[Describe]` |
-| `[Mechanical Assembly]` | Physical Action | `[Describe]` |
+| `[Push buttons]` | Input | `[Act as point transfer mechanism - pressing one button makes it a "Giver" and pressing the next one makes it a reciever]` |
+| `[ESP32]` | Processing | `[Running the code and 3V supply for buttons]` |
+| `[RGB-WS2928B strips]` | Output | `[Indicates the number of points / fingers each hand has. Also a win-loose animation indicator]` |
+| `[Servo]` | Output | `[Rotates the character display shaft]` |
+| `[Buzzer]` | Output | `[Audio feedback for win-lossand point transfer]` |
+| `[Servo+Shaft]` | Physical Action | `[turns the Character display - Displays what AI mode/charater you have selected to play against]` |
 
 ---
 
@@ -303,7 +344,7 @@ Add a sketch with labels showing:
 
 | Dimension | Value |
 |---|---|
-| Length | `[Write here]` |
+| Length | `25 cm` |
 | Width | `21 cm` |
 | Height | `5.2 cm` |
 | Estimated weight | `[Write here]` |
@@ -332,7 +373,10 @@ Check all that apply.
 Describe the mechanism and what it is meant to do.
 
 **Response:**  
-`[Write here]`
+`[Buttons - primary interaction mechanism
+The built-in tactile buttons are the sole means of player input during gameplay. Pressing a button completes a circuit that triggers a corresponding in-game action — selecting a hand to attack or reset the round. The physical act of pressing is what initiates every meaningful event in the system. The buttons are the point where the player's decision becomes a machine instruction, making them the most critical mechanical element in the device. Their placement on the panel mirrors the spatial logic of the hand game — two on the player's side, two representing the opponent's hands.
+Servo motor - character display mechanism
+A servo motor is mounted inside the enclosure and connected to a rotating shaft. When a character is selected through the companion app via Bluetooth, the ESP32 signals the servo to rotate the shaft to a specific angular position corresponding to that character. The shaft carries printed or attached graphics representing each available AI opponent, making the selection visible as a physical rotation rather than a screen display. This mechanism serves a presentational rather than gameplay function — it externalises the character choice as a tangible, visible object state, reinforcing the identity of the selected opponent before play begins.]`
 
 ## 8.3 Motion Planning
 If something moves, explain:
@@ -343,7 +387,12 @@ If something moves, explain:
 - what could go wrong.
 
 **Response:**  
-`[Write here]`
+`[Buttons
+The tactile buttons move vertically downward on press — a short, spring-loaded depression of a few millimeters. The cause is direct physical force from the player's finger. The movement is near-instant and self-returning; the spring mechanism pushes the button back to its resting state the moment pressure is released. Nothing meaningful can go wrong here beyond physical wear over extended use, which is negligible at prototype scale.
+Servo shaft
+The shaft is the only component with planned, controlled motion. It is a four-sided rectangular shaft attached to a servo motor powered at 5V, with each face carrying the graphic of one AI character. When a player selects a character through the app, the ESP32 signals the servo to rotate to the angular position corresponding to that character's face.
+Each selection moves the shaft 90 degrees in the standard case. Where the target character is on the opposite face from the currently displayed one, the shaft rotates 180 degrees. The speed is intentionally moderate — fast enough that the transition feels responsive and deliberate, slow enough that the rotation itself is readable and the arriving character is noticed rather than suddenly present. This transition is part of the experience; it should feel like a reveal.
+What could go wrong is limited but worth noting. The servo may stall midway through a rotation, leaving the shaft between two faces and displaying neither character cleanly. Alternatively, an incorrect angular position could be sent, placing the wrong character at the front. Both failures are purely aesthetic and have no effect on gameplay, but they undermine the presentation quality and the sense that the device is a coherent, intentional object. A calibration check on startup — rotating the shaft to a known home position before any character is selected — would catch misalignment before a player notices it. ]`
 
 ## 8.4 Simulation / CAD / Animation Before Making
 If your project includes mechanical motion, document the digital planning before fabrication.
@@ -378,7 +427,7 @@ What changed after the CAD, animation, or simulation stage?
 Describe the main electrical connections.
 
 **Response:**  
-`[Write here]`
+`[Main electrical connections include the following:......]`
 
 ## 9.3 Circuit Diagram
 Insert a hand-drawn or software-made circuit diagram.
@@ -496,10 +545,11 @@ Insert a sketch or screenshot of the app interface.
 
 | Item | Quantity | In Kit? | Need to Buy? | Estimated Cost | Material / Spec | Why This Choice? |
 |---|---:|---|---|---:|---|---|
-| `[ESP32]` | `1` | `Yes` | `No` | `0` | `[********]` | `[Wifi support and sufficient pin inputs]` |
-| `[Servo motor - microservo SG90]` | `[1]` | `[Yes]` | `[No]` | `[0]` | `[5V servo]` | `[******]` |
+| `[ESP32]` | `1` | `Yes` | `No` | `0` | `[36 Pins]` | `[Wifi support and sufficient pin inputs]` |
+| `[Servo motor - microservo SG90]` | `[1]` | `[Yes]` | `[No]` | `[0]` | `[5V servo]` | `[Sufficient torque to rotate caharacter display and easy to address for specific angle management]` |
 | `[External BreadBoard Power Supply - MB102 ]` | `[1]` | `[Yes]` | `[No]` | `[0]` | `[Spec]` | `[5V power supply]` |
-| `[Buzzer- Active]` | `[2]` | `[Yes]` | `[No]` | `[0]` | `[]` | `[******]` |
+| `[Buzzer- Active]` | `[2]` | `[Yes]` | `[No]` | `[0]` | `[Active 3V 2 pin Buzzer]` | `[Minimal audio feedback to avoid distraction]` |
+| `[RGB-WS29212B strips]` | `[1]` | `[No]` | `[Yes]` | `[490]` | `[Addressable RGB, Non Water proof 60 LEDs` | `[Provide accurate light movements addressablitiy]` |
 
 
 ## 12.2 Material Justification
@@ -683,14 +733,15 @@ What is the single biggest uncertainty in your project at this stage?
 
 | Date | Problem Found | Type | What You Tried | Result | Next Action |
 |---|---|---|---|---|---|
-| `[Date]` | `[Describe issue]` | `[Technical / Mechanical / UI / Gameplay]` | `[What you did]` | `[Worked / Partly / Failed]` | `[Next step]` |
-| `[Date]` | `[Describe issue]` | `[Type]` | `[What you did]` | `[Result]` | `[Next step]` |
+| `[19th April]` | `[The External power supplies kept supplying 12V instead of 5V]` | `[Electrical]` | `[Found a new power supply module and reserved from all possible problematic connections- middle rail of breadboard]` | `[Worked]` | `[Always checking the power supply module with a multimeter]` |
+| `[19th April]` | `[The External power supplies kept supplying 12V instead of 5V]` | `[Electrical]` | `[Found a new power supply module and reserved from all possible problematic connections- middle rail of breadboard]` | `[Worked]` | `[Always checking the power supply module with a multimeter]` |
+| `[19th]` | `[RGB strips stopped working as a result of the broken power supply modules]` | `[Electrical]` | `[Replaced all the strips with new ones]` | `[Worked]` | `[Keeping a check on the voltage of the power supply module ]` |
 
 ## 16.4 Playtesting Notes
 
 | Tester | What They Did | What Confused Them | What They Enjoyed | What You Will Change |
 |---|---|---|---|---|
-| `[Peer / friend / classmate]` | `[Observation]` | `[Observation]` | `[Observation]` | `[Action]` |
+| `[Classmate/friend]` | `[Tester had a basic ideaabout the original game]` | `[]` | `[Observation]` | `[Action]` |
 | `[Peer / friend / classmate]` | `[Observation]` | `[Observation]` | `[Observation]` | `[Action]` |
 
 ---
@@ -810,8 +861,8 @@ What would you improve next?
 # 20. Final Submission Checklist
 
 Before submission, confirm that:
-- [ ] Team details are complete
-- [ ] Project description is complete
+- [O] Team details are complete
+- [O] Project description is complete
 - [ ] Inspiration sources are included
 - [ ] Player journey is written
 - [ ] Sketches are added
