@@ -724,8 +724,7 @@ Expected outcomes:
 |---|---|---|---|---|---|
 | `[Unbalanced game / technical bugs in the game]` | `Technical/ code` | `Low` | `High` | `[Playtesting, Scenario mapping, overall balance coding]` | `[Advaith]` |
 | `[Button structure breaks and falls inside during play]` | `Mechanical` | `Medium` | `High` | `[Reinforce the adhesive of the button layer to the board]` | `[Nishad]` |
-| `[Jumper Wire gets loose]` | `[Electronic]` | `[High]` | `[]` | `[Plan]` | `[Name]` |
-| `[Risk]` | `[Type]` | `[Low/Medium/High]` | `[Low/Medium/High]` | `[Plan]` | `[Name]` |
+
 
 ## 15.2 Biggest Unknown Right Now
 What is the single biggest uncertainty in your project at this stage?
