@@ -711,10 +711,10 @@ Expected outcomes:
 
 | Week | Planned Goal | What Actually Happened | What Changed | Next Steps |
 |---|---|---|---|---|
-| Week 1 | `[Write here]` | `[Write here]` | `[Write here]` | `[Write here]` |
-| Week 2 | `[Write here]` | `[Write here]` | `[Write here]` | `[Write here]` |
-| Week 3 | `[Write here]` | `[Write here]` | `[Write here]` | `[Write here]` |
-| Week 4 | `[Write here]` | `[Write here]` | `[Write here]` | `[Write here]` |
+| Week 1 | `[Model sketch]` | `[Finalised only character select]` | `[Use of characters as game moves]` | `[ideate characters and selection]` |
+| Week 2 | `[Sketch and model]` | `[Sketch and model (not DFX)+material choice confirmed]` | `[list of components to buy]` | `[buy components]` |
+| Week 3 | `[Finish lazer cut and glue everything together]` | `[Delayed lazer cut]` | `[Building pushed ahead]` | `[Print MDF but also finalise code on a breaboard simulation]` |
+| Week 4 | `[Complete project 3 days early (characters, graphics, balancing, build)]` | `[Components fried, out of power supply, ESP32 RAM and PWD problems]` | `[button caps became stretch feature]` | `[Complete as soon as possible to test the server running on main.py]` |
 
 ---
 
