@@ -1,0 +1,35 @@
+#settings to easily control during wiring and stuff
+
+#buttons
+PIN_PLAYER_LEFT  = 26
+PIN_PLAYER_RIGHT = 14
+PIN_AI_LEFT      = 5
+PIN_AI_RIGHT     = 4
+
+#buzzers
+PIN_BUZZER_1 = 12
+PIN_BUZZER_2 = 18
+
+#neopixels
+PIN_NEO_PLAYER_LEFT  = 32
+PIN_NEO_PLAYER_RIGHT = 19
+PIN_NEO_AI_LEFT      = 21
+PIN_NEO_AI_RIGHT     = 22
+PIXELS_PER_STRIP     = 5
+BRIGHTNESS           = 50
+
+#servos
+PIN_SERVO = 27
+SERVO_ANGLE_DRUID  = 50
+SERVO_ANGLE_TANK   = 100
+SERVO_ANGLE_WRAITH = 180
+SERVO_ANGLE_ORACLE = 0
+
+#delay timings
+DEBOUNCE_MS      = 50
+SPLIT_TIMEOUT_MS = 2000
+AI_BLINK_MS      = 1000
+
+#wifi connection info
+WIFI_SSID     = "CHOPPY BEEPS"
+WIFI_PASSWORD = "choppy123"
