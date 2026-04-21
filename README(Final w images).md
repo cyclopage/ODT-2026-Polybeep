@@ -276,7 +276,8 @@ App Interaction: A web interface served from the ESP32 via WiFi allows character
 Add an early sketch of the full idea.
 
 **Insert image below:**  
-`[Upload image and link here]`
+`[img src="<img width="461" height="640" alt="image" src="https://github.com/user-attachments/assets/7d3db73e-5adc-4737-b750-0701142156b7" />
+" width="400"]`
 
 Example:
 ```md
@@ -549,7 +550,8 @@ Examples:
 Insert a sketch or screenshot of the app interface.
 
 **Insert image below:**  
-`[Upload image and link here]`
+`[img src="<img width="591" height="1280" alt="image" src="https://github.com/user-attachments/assets/30138695-f78b-4482-8907-79b3c67e804f" />
+" width="400"]`
 
 ## 11.5 App Screen Flow
 
