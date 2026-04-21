@@ -468,7 +468,34 @@ Include:
 - reset behavior.
 
 **Response:**  
-`[Write here]`
+`[STARTUP: Initialize all hardware (buttons, buzzer, NeoPixels, servo). Start WiFi access point. Begin HTTP server loop.
+
+INPUT HANDLING: Non-blocking server checks for web requests. Buttons use simple polling with 50ms debounce.
+
+GAME FLOW: 
+1. Phone sends character selection via /?m=druid
+2. Play sound, animate LEDs, move servo
+3. Enter game loop - alternate turns
+4. Player turn: wait for button presses (giver hand, then target)
+5. AI turn: run minimax search, apply randomness check, execute move
+6. Check win/lose after each turn
+7. Update game_status so phone can poll /?status=1
+
+AI LOGIC (Minimax Algorithm):
+1. Get all legal moves (attacks + valid splits)
+2. Check randomness: if random(0-99) < character's randomness%, pick random move and skip calculation
+3. Otherwise, for each possible move:
+   a. Create "snapshot" - lightweight copy of game state (just hand values, no objects)
+   b. Simulate applying move to snapshot
+   c. Recursively explore opponent's responses up to 'depth' levels
+   d. Score positions: +points for low AI hand values, +big bonus for killing human hands
+   e. Human turns minimize score, AI turns maximize score
+   f. Alpha-beta pruning cuts off branches that can't affect outcome
+4. Sort all moves by final score
+5. Pick highest-scoring move
+6. Character depth determines intelligence: Druid=1 (sees 1 move), Oracle=4 (sees 4 moves ahead)
+
+RESET: After game ends, wait 3 seconds, reset status to 'idle', ready for next game.]`
 
 ## 10.3 Code Flowchart
 Insert a flowchart showing your code logic.
