@@ -338,7 +338,7 @@ Add a sketch with labels showing:
 - output elements.
 
 **Insert image below:**  
-`[Upload image and link here]`
+`[<img src="images/WhatsApp Image 2026-04-21 at 08.06.39.jpeg" width="400">]`
 
 ## 7.3 Approximate Dimensions
 
@@ -399,7 +399,7 @@ If your project includes mechanical motion, document the digital planning before
 
 | Tool Used | File / Link | What Was Tested |
 |---|---|---|
-| `[BLender]` | `[Link or screenshot]` | `[If rotation shaft made the character transition visible]` |
+| `[BLender]` | `[<img src="images/Screenshot 2026-04-21 081238.png" width="400">]` | `[If rotation shaft made the character transition visible]` |
 
 ## 8.5 Changes After Digital Testing
 What changed after the CAD, animation, or simulation stage?
@@ -435,7 +435,7 @@ The RGB and Servo Connected to Power supply for 5V and ESP 32 for input]`
 Insert a hand-drawn or software-made circuit diagram.
 
 **Insert image below:**  
-`[Upload image and link here]`
+`[<img src="images/circuit_image.png" width="400">]`
 
 ## 9.4 Power Plan
 
@@ -853,7 +853,7 @@ What slowed you down?
 How well did you manage time, tasks, and responsibilities?
 
 **Response:**  
-`[The division of responsibilities between coding and fabrication kept the two workstreams largely parallel and reduced bottlenecks during independent development. The most productive sessions were the interdependent ones — where Advaith's logic needed to map directly onto Nishad's physical layout — because they forced both sides to communicate precisely about how the system fit together. Time management held well in the early phases but compressed toward integration, which is where most of the debugging happened. In a longer project, earlier integration testing would have caught hardware-software conflicts before they stacked up.]`
+`[ The team got a ]`
 
 ## 19.2 Technical Reflection
 What did you learn about:
