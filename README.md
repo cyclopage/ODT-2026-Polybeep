@@ -511,7 +511,7 @@ Suggested sequence:
 - error handling.
 
 **Insert image below:**  
-`[Upload image and link here]`
+`[https://i.ibb.co/SwKqd4GT/Whats-App-Image-2026-04-21-at-8-40-24-PM.jpg]`
 
 ## 10.4 Pseudocode
 
