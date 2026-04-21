@@ -60,7 +60,7 @@ Advaith Manojkumar, Nishad Bhagwat
 | Name | Primary Role | Secondary Role | Strengths Brought to the Project |
 |---|---|---|---|
 | `Advaith Manojkumar` | `Coding` | `Mechanics` | `Programming knowledge and game design` |
-| `Nishad Bhagwat` | `Electronics` | `App` | `Mechanics, Logic mapping, Fabrication (materals)` |
+| `Nishad Bhagwat` | `materials` | `Electronics and wiring` | `Mechanics, Logic mapping, Fabrication (materals)` |
 
 ## 1.3 Project Title
 `Chopped Sticks`
