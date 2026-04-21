@@ -460,7 +460,9 @@ AI LOGIC (Minimax Algorithm):
 5. Pick highest-scoring move
 6. Character depth determines intelligence: Druid=1 (sees 1 move), Oracle=5 (sees 5 moves ahead)
 
-RESET: After game ends, wait 3 seconds, reset status to 'idle', ready for next game.]`
+RESET: After game ends, wait 3 seconds, reset status to 'idle', ready for next game.
+
+Further details on programming logic can be found in the images folder]`
 
 ## 10.3 Code Flowchart
 Insert a flowchart showing your code logic.
