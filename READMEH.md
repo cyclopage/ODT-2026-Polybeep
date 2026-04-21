@@ -63,7 +63,7 @@ Advaith Manojkumar, Nishad Bhagwat
 | `Nishad Bhagwat` | `Materials` | `Electronics and wiring` | `Mechanics, Logic mapping, Fabrication` |
 
 ## 1.3 Project Title
-`[Chopped Sticks]`
+`[Choppy Beeps]`
 
 ## 1.4 One-Line Pitch
 `[A physical arcade version of Chopsticks with programmed AI opponents to play against]`
@@ -76,7 +76,7 @@ In 1–2 paragraphs, explain:
 - what technologies are involved.
 
 **Response:**  
-`[Chopsticks Arcade is a two-player hand game brought to life as a physical arcade device, where you face off against a programmed AI opponent across a glowing panel of buttons and LED arrays. The rules are simple: tap your fingers onto your opponent's hand to add values, and eliminate both their hands before they eliminate yours. But the real game is in choosing your opponent. Four AI characters, each with a distinct mechanical twist, sit on the other side of the box. The Druid plays a clean, forgiving version of the game — a gentle introduction that still punishes sloppy play. The Wraith fights dirty with reviving hands, forcing you to work twice as hard for the win. The Tank changes the physics entirely — it takes six points, not five, to destroy a hand, stretching every match into a slow war of attrition. The Oracle offers no mercy: a deep-searching minimax AI that sees moves ahead and is nearly unbeatable.
+`[Choppy Beeps is a two-player hand game brought to life as a physical arcade device, where you face off against a programmed AI opponent across a glowing panel of buttons and LED arrays. The rules are simple: tap your fingers onto your opponent's hand to add values, and eliminate both their hands before they eliminate yours. But the real game is in choosing your opponent. Four AI characters, each with a distinct mechanical twist, sit on the other side of the box. The Druid plays a clean, forgiving version of the game — a gentle introduction that still punishes sloppy play. The Wraith fights dirty with reviving hands, forcing you to work twice as hard for the win. The Tank changes the physics entirely — it takes six points, not five, to destroy a hand, stretching every match into a slow war of attrition. The Oracle offers no mercy: a deep-searching minimax AI that sees moves ahead and is nearly unbeatable.
 
 What makes this satisfying is the collision of something relatable — a children's hand game played worldwide — with something obsessively engineered: minimax trees, alpha-beta pruning, and character-specific modifiers baked into each opponent's code. LEDs count your fingers. The click of buttons, flashing of lights and a buzzer marks every turn. Wins and losses are announced in light and sound rather than text. A companion web interface on your phone, served directly from the ESP32, is used to select opponents.]`
 
